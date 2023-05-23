@@ -1,0 +1,62 @@
+/*
+Title:Program to check number is Armstrong or not
+Date:23-05-2023
+Author:Tanishq Deerghasi 
+*/
+
+#include<stdio.h>
+int main()
+{
+	int r,n,m,rev=0,c,count;
+	
+	printf("enter number");
+	scanf("%d",&n);
+	
+	c=n;
+	
+	while(c)
+	{
+		c=c/10;
+		count++;	
+	}
+	
+	m=n;
+	
+	if(count==3)
+	{
+		while(m)
+		{	
+			r=m%10;
+			rev=rev+r*r*r;
+			m=m/10;
+		}	
+	}
+	
+	if(count==4)
+	{
+		while(m)
+		{	
+			r=m%10;
+			rev=rev+r*r*r*r;
+			m=m/10;
+		}	
+	}
+	
+	if(count==5)
+	{
+		while(m)
+		{	
+			r=m%10;
+			rev=rev+r*r*r*r*r;
+			m=m/10;
+		}	
+	}
+	
+	
+	if(n==rev)
+		printf("Armstrong Number");
+	else
+		printf("Not Armstrong Number");
+	
+	return 0;
+}
