@@ -1,0 +1,22 @@
+/*
+Title:wap to read an age of 20 persons and find out how many of them fall
+under 1. baby age(1-5)  2.school age(6-18)   3. aduld age.(18+)
+Date:23-05-2023
+Author:Tanishq Deerghasi
+*/
+#include<stdio.h>
+int main()
+{
+	int a,b=0,s=0,ad=0,i;
+	for(i=0;i<=20;i++)
+	{
+		scanf("%d",&a);
+		if(a>=1&&a<=5)
+			b++;
+		else if(a>=6&&a<=17)
+			s++;
+		else
+			ad++;
+	}
+	printf("Baby=%d\nSchool=%d\nAdult=%d",b,s,ad);
+}
