@@ -1,0 +1,54 @@
+/*
+Title: find frequency of the given element
+  arr=[10 20 10 20 30 20 40]
+  input:10
+  output:2 times
+  input:20
+  output:3 times
+Date:24-05-2023
+Author:Tanishq Deerghasi 
+*/
+
+#include <stdio.h>
+void main()
+{
+    int arr1[100], fr1[100];
+    int n, i, j, cnt;
+	
+
+       printf("Enter Size:");
+       scanf("%d",&n);
+   
+       printf("Enter %d elements:\n",n);
+       for(i=0;i<n;i++)
+    	{
+	      scanf("%d",&arr1[i]);
+		  fr1[i] = -1;
+	    }
+    
+	for(i=0; i<n; i++)
+    {
+        cnt = 1;
+        for(j=i+1; j<n; j++)
+        {
+            if(arr1[i]==arr1[j])
+            {
+                cnt++;
+                fr1[j] = 0;
+            }
+        }
+
+        if(fr1[i]!=0)
+        {
+            fr1[i] = cnt;
+        }
+    }
+    printf("\nThe frequency of all elements of array : \n");
+    for(i=0; i<n; i++)
+    {
+        if(fr1[i]!=0)
+        {
+            printf("%d occurs %d times\n", arr1[i], fr1[i]);
+        }
+    }
+}
